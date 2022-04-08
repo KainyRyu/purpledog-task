@@ -1,5 +1,11 @@
 const { default: axios } = require('axios');
 
+export const BANNER_CODE = {
+  mainTop: 'MAIN_TOP', // 메인 슬라이드 배너
+  sub1: 'MAIN_SUB_1', // 타임특가 배너
+  sub2: 'MAIN_SUB_2', // 인증샷 배너
+};
+
 export const getMainBanner = async (bannerCodeId) => {
   try {
     const res = axios.get(
@@ -11,6 +17,7 @@ export const getMainBanner = async (bannerCodeId) => {
   }
 };
 
+// MAIN
 export const getText = async (textGroupCode) => {
   try {
     const res = axios.get(
