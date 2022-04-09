@@ -1,20 +1,21 @@
 import React from 'react';
 import Styled from 'styled-components';
-import Title from './Title';
+import ProductContainer from 'components/ProductContainer';
 
-const Container = Styled.div`
-
+const Container = Styled.ul`
+  margin: 15px 0;
+  display: flex;
+  flex-flow: ${({ listDirection }) => (listDirection === 'vertical' ? 'column' : 'row')};
+  list-style: none;
+  padding: 0;
 `;
 
-export default function WineList() {
+export default function WineList({ type, wineList, listDirection }) {
   return (
-    <Container>
-      <Title
-        title="김새콤달콤님께 맞는 와인"
-        subtitle="회원님이 선택한 취향의 와인만 추천드려요."
-      />
-
-      <div>Wine Lists</div>
+    <Container listDirection={listDirection}>
+      {wineList?.map((product, idx) => (
+        <ProductContainer key={idx} type={type} product={product} listDirection={listDirection} />
+      ))}
     </Container>
   );
 }
