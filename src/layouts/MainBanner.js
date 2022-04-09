@@ -29,7 +29,11 @@ const GageBar = Styled.div`
 export default function MainBanner() {
   const [res, setRes] = useState([]);
   useEffect(() => {
-    getMainBanner('MAIN_TOP').then(({ data }) => setRes(data.results));
+    const fetch = async () => {
+      const res = await getMainBanner('MAIN_TOP');
+      setRes(res.data.results);
+    };
+    fetch();
   }, []);
 
   return (
