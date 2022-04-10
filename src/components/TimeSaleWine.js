@@ -7,14 +7,21 @@ const Container = Styled.li`
   margin-right: 10px;
   margin-bottom: 15px;
   display: flex;
+  height: 132px;
 `;
+
+const ThumbnailContainer = Styled.div`
+  background: #f7f7f7;
+  width: 110px;
+  `;
 
 const Thumbnail = Styled.img`
   borderRadius: ;6px;
-  height: 132px;
-  width: 110px;
+  width: 100%;
+  height: 100%;
   margin-right: 15px;
   background: #f7f7f7;
+  transform: scale(0.8);
   `;
 
 export default function TimeSaleWine({ product }) {
@@ -31,8 +38,11 @@ export default function TimeSaleWine({ product }) {
 
   return (
     <Container>
-      <Thumbnail src={thumbnailImageUrl} alt={name} />
+      <ThumbnailContainer>
+        <Thumbnail src={thumbnailImageUrl} alt={name} />
+      </ThumbnailContainer>
       <ItemDetailContainer
+        type="timeSale"
         countryName={countryName}
         styleNames={styleNames}
         name={name}

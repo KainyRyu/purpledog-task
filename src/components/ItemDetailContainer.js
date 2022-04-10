@@ -26,6 +26,12 @@ const WineName = Styled.div`
   font-weight: 500;
   font-size: 13px;
   line-height: 19px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 `;
 const Price = Styled.div`
   font-size: 16px;
@@ -47,15 +53,16 @@ const SalesPrice = Styled.span`
 `;
 
 const TimeSaleContainer = Styled.div`
-  background-color: #FF0045;
-  color: #FFFFFF;
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 2px;
   height: 22px;
   width: 86px;
   font-size: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #FF0045;
+  color: #FFFFFF;
 `;
 
 const TimeSaleImg = Styled.img`
@@ -82,10 +89,14 @@ export default function ItemDetailContainer({
         <span>{styleNames}</span>
       </SubContext>
       <WineName>{name}</WineName>
-      <Price>{discountPrice}원</Price>
+      <Price>{discountPrice ? discountPrice : salesPrice}원</Price>
       <div>
-        <DiscountPercent>{discountPercent}%</DiscountPercent>
-        <SalesPrice>{salesPrice}원</SalesPrice>
+        {discountPercent && (
+          <>
+            <DiscountPercent>{discountPercent}%</DiscountPercent>
+            <SalesPrice>{`${salesPrice}`}원</SalesPrice>
+          </>
+        )}
         {type === 'timeSale' && (
           <TimeSaleContainer>
             <TimeSaleImg src={TimeIcon} alt="time sale" />

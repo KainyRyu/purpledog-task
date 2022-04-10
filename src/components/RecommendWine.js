@@ -8,7 +8,13 @@ const Container = Styled.li`
   margin-bottom: 15px;
   display:  block;
 `;
+
+const ThumbnailContainer = Styled.div`
+  background: #f7f7f7;
+  margin-bottom: 8px;
+`;
 const Thumbnail = Styled.img`
+  transform: scale(0.8);
   borderRadius: 6px;
   height: 169px;
   width: 140px;
@@ -24,15 +30,18 @@ export default function RecommendWine({ product }) {
     discountPercent,
     styleNames,
     timeSaleStartDate,
+    englishName,
   } = product;
-
+  console.log(product);
   return (
     <Container>
-      <Thumbnail src={thumbnailImageUrl} alt={name} />
+      <ThumbnailContainer>
+        <Thumbnail src={thumbnailImageUrl} alt={name} />
+      </ThumbnailContainer>
       <ItemDetailContainer
         countryName={countryName}
         styleNames={styleNames}
-        name={name}
+        name={englishName}
         discountPrice={discountPrice}
         discountPercent={discountPercent}
         salesPrice={salesPrice}

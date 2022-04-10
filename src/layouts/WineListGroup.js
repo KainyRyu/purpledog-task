@@ -7,16 +7,19 @@ import PopularWine from '../components/PopularWine';
 import { BANNER_CODE, getMainBanner, getPopular, getRecommend, getTimeSale } from 'lib/apis';
 
 const ListContainer = Styled.ul`
-  margin: 15px 0;
+  margin: 0;
   display: flex;
   flex-flow: ${({ listDirection }) => (listDirection === 'vertical' ? 'column' : 'row')};
-  flex-wrap: ${({ type }) => (type === 'popular' ? 'wrap' : 'none')};
+  ${({ type }) =>
+    type === 'popular' ? 'flex-wrap: wrap; justify-content: space-between;' : 'flex-wrap: none;'};
   list-style: none;
   padding: 0;
+  overflow: scroll;
 `;
 
 const BannerImg = Styled.img`
   width: 100%;
+  margin-bottom: 15px;
 `;
 export default function WineListGroup({
   type,
