@@ -32,7 +32,7 @@ export default function RecommendWine({ product }) {
     timeSaleStartDate,
     englishName,
   } = product;
-  console.log(product);
+
   return (
     <Container>
       <ThumbnailContainer>

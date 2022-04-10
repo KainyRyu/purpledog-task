@@ -3,8 +3,10 @@ import Styled from 'styled-components';
 import { getText, TEXT_KEY } from './lib/apis';
 import MainBanner from './layouts/MainBanner';
 import Gnb from './layouts/Gnb';
-import ListContainer from 'layouts/ListContainer';
+import WineListGroup from 'layouts/WineListGroup';
 import MidBanner from 'components/MidBanner';
+import CountrySelectSection from 'layouts/CountrySelectSection';
+import PromotionSection from 'layouts/PromotionSection';
 
 const Container = Styled.div`
   overflow-x:hidden;
@@ -37,36 +39,35 @@ function MainPage() {
       <MainBanner />
       {textGroup && (
         <BodyContainer>
-          <ListContainer
+          <WineListGroup
             type="recommend"
             title={textGroup[TEXT_KEY.recommnedTitle]?.content}
             subtitle={textGroup[TEXT_KEY.recommendDesc]?.content}
           />
-          <ListContainer
+          <WineListGroup
             type="timeSale"
             listDirection="vertical"
             title={textGroup[TEXT_KEY.recommendProduct1]?.content}
             subtitle={textGroup[TEXT_KEY.recommendProduct2Desc]?.content}
           />
           <MidBanner />
-          <h1>{textGroup[TEXT_KEY.countryWineTitle]?.content}</h1>
-          <h3>{textGroup[TEXT_KEY.countryWineDesc]?.content}</h3>
 
-          <h1>{textGroup[TEXT_KEY.eventTitle]?.content}</h1>
-          <h3>{textGroup[TEXT_KEY.eventDesc]?.content}</h3>
+          <CountrySelectSection
+            title={textGroup[TEXT_KEY.countryWineTitle]?.content}
+            subtitle={textGroup[TEXT_KEY.countryWineDesc]?.content}
+          />
 
-          <h1>{textGroup[TEXT_KEY.recommendProduct2Title]?.content}</h1>
-          <h3>{textGroup[TEXT_KEY.recommendProduct2Desc]?.content}</h3>
+          <PromotionSection
+            title={textGroup[TEXT_KEY.eventTitle]?.content}
+            subtitle={textGroup[TEXT_KEY.eventDesc]?.content}
+          />
+          <WineListGroup
+            type="popular"
+            title={textGroup[TEXT_KEY.recommendProduct2Title]?.content}
+            subtitle={textGroup[TEXT_KEY.recommendProduct2Desc]?.content}
+          />
         </BodyContainer>
       )}
-
-      {/* 
-        <MidBanner/>
-        <WineList way='vertical'/>
-        <CountryList/>
-        <Promotion/>
-        <PopularWineList/>
-       */}
     </Container>
   );
 }
