@@ -9,6 +9,8 @@ const TitleWrap = Styled.div`
     font-size: 18px;
     font-weight: bold;
     line-height: 26px;
+    display: flex;
+    justify-content: space-between;
 `;
 
 const SubtitleWrap = Styled.div`
@@ -17,10 +19,19 @@ const SubtitleWrap = Styled.div`
     line-height: 19px;
 `;
 
-export default function Title({ title, subtitle }) {
+const MoreLink = Styled.a`
+  font-size: 13px;
+  line-height: 19px;
+  color: #A2A2A2;
+`;
+
+export default function Title({ title, subtitle, isMore }) {
   return (
     <Container>
-      <TitleWrap>{title}</TitleWrap>
+      <TitleWrap>
+        <span>{title}</span>
+        {isMore && <MoreLink>더보기</MoreLink>}
+      </TitleWrap>
       <SubtitleWrap>{subtitle}</SubtitleWrap>
     </Container>
   );
