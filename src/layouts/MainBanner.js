@@ -23,7 +23,6 @@ export default function MainBanner() {
   const dotSetting = (dots) => {
     let activeDot;
     React.Children.map(dots, (dot) => {
-      console.log(dot);
       const { className, children } = dot.props;
       if (className === 'slick-active') activeDot = children.props.children;
     });
@@ -65,7 +64,6 @@ export default function MainBanner() {
     <Container className="main-banner">
       <Slider {...settings}>
         {res.map(({ bannerId, thumbnailImageUrl }) => {
-          console.log(thumbnailImageUrl);
           return (
             <div key={bannerId}>
               <MainImg className="banner-img" key={bannerId} src={thumbnailImageUrl} alt="main" />
