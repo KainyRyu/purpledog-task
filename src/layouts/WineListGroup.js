@@ -7,7 +7,8 @@ import PopularWine from '../components/PopularWine';
 import { BANNER_CODE, getMainBanner, getPopular, getRecommend, getTimeSale } from 'lib/apis';
 
 const ListContainer = Styled.ul`
-  margin: 0;
+  margin: 0 0 ${({ type }) => (type === 'timeSale' ? '19px' : 0)} 0;
+
   display: flex;
   flex-flow: ${({ listDirection }) => (listDirection === 'vertical' ? 'column' : 'row')};
   ${({ type }) =>
@@ -50,7 +51,7 @@ export default function WineListGroup({
 
   return (
     <div>
-      <Title title={title} subtitle={subtitle} />
+      <Title title={title} subtitle={subtitle} type={type} />
       {timeSaleBanner && (
         <BannerImg src={timeSaleBanner.thumbnailImageUrl} alt={timeSaleBanner.description} />
       )}

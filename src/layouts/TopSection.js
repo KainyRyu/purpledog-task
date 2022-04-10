@@ -37,20 +37,15 @@ const RedDot = Styled.div`
 
 const BagCount = Styled.div`
   position: absolute;
+  padding: 1px 4px 2px 4px;
   top:-3px;
   right: -6px;
-  width: 20px;
-  height: 18px;
   background-color: #FF005F;
   border-radius: 30px;
   color: #ffffff;
   font-size: 10px;
   font-weight: 500;
   text-align: center;
-  padding: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export default function TopSection() {

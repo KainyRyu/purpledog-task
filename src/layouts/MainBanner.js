@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const Container = Styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100vw;
     z-index: -1;
@@ -15,6 +15,33 @@ const Container = Styled.div`
 
 const MainImg = Styled.img`
     width: 100vw;
+`;
+
+const GageContainer = Styled.div`
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 45px;
+  width: 100vw;
+`;
+
+const GageBar = Styled.div`
+  display: flex;
+  left: 0;
+  z-index: 5;
+  height: 4px;
+  width: calc(100vw - 40px);
+  background-color: #ffffff;
+  opacity: 0.3;
+  border-radius: 2px;
+`;
+const GagePercentage = Styled.div`
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  height: 4px;
+  background-color: #ffffff;
 `;
 
 export default function MainBanner() {
@@ -27,15 +54,14 @@ export default function MainBanner() {
       if (className === 'slick-active') activeDot = children.props.children;
     });
     return (
-      <div>
-        <div className="gage-bar" />
-        <div
-          className="inner"
+      <GageContainer>
+        <GageBar />
+        <GagePercentage
           style={{
             width: `calc(${(activeDot / dots.length) * 100}% - 40px)`,
           }}
         />
-      </div>
+      </GageContainer>
     );
   };
 
@@ -49,7 +75,6 @@ export default function MainBanner() {
     autoplay: true,
     autoplaySpeed: 2000,
     innerWidth: { innerWidth: window.innerWidth * res.length * 2 },
-    dotsClass: 'gage-wrap',
   };
 
   useEffect(() => {

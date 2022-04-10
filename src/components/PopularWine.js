@@ -9,12 +9,12 @@ const Container = Styled.li`
 
 const ThumbnailContainer = Styled.div`
   background: #f7f7f7;
+  border-radius: 6px;
   margin-bottom: 10px;
 `;
 const Thumbnail = Styled.img`
   width: 100%;
   height: calc(50vw);
-  borderRadius: 6px;
   transform: scale(0.8);
 `;
 
@@ -36,6 +36,7 @@ export default function PopularWine({ product }) {
         <Thumbnail src={thumbnailImageUrl} alt={name} />
       </ThumbnailContainer>
       <ItemDetailContainer
+        type="popular"
         countryName={countryName}
         name={name}
         discountPrice={discountPrice}

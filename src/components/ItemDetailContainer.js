@@ -8,7 +8,7 @@ const Container = Styled.div(({ type }) => ({
 }));
 
 const SubContext = Styled.div`
-  color: #CBCBCB;
+  color: #C5C5C5;
   font-weight: 500;
   font-size: 11px;
   line-height: 16px;
@@ -31,23 +31,25 @@ const WineName = Styled.div`
   display: -webkit-box;
   white-space: normal;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: ${({ type }) => (type === 'popular' ? 1 : 2)};
 `;
 const Price = Styled.div`
   font-size: 16px;
   font-weight: bold;
-  line-heihgt: 24px;
+  line-height: 24px;
 `;
 
 const DiscountPercent = Styled.span`
   font-size: 12px;
-  line-heihgt: 17px;
+  font-weight: 500;
+  line-height: 17px;
   color: #FF0045;
   margin-right: 5px;
-`;
+  `;
 const SalesPrice = Styled.span`
   font-size: 12px;
-  line-heihgt: 17px;
+  font-weight: 500;
+  line-height: 17px;
   text-decoration-line: line-through;
   color: #CBCBCB;
 `;
@@ -88,7 +90,7 @@ export default function ItemDetailContainer({
         <Dot />
         <span>{styleNames}</span>
       </SubContext>
-      <WineName>{name}</WineName>
+      <WineName type={type}>{name}</WineName>
       <Price>{discountPrice ? discountPrice : salesPrice}원</Price>
       <div>
         {discountPercent && (

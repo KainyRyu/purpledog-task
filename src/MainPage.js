@@ -16,8 +16,8 @@ const Container = Styled.div`
 const BodyContainer = Styled.div`
   border-radius: 15px 15px 0px 0px;
   background-color: #fff;
-  margin-top: 268px;
-  padding: 32px 15px 0 15px;
+  margin-top: calc(100vw - 120px);
+  padding: 2px 15px 80px 15px;
   width: calc(100% - 30px);
   height: 100%;
 `;

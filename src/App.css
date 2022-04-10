@@ -35,36 +35,3 @@
     transform: rotate(360deg);
   }
 } */
-
-.main-banner {
-  position: fixed;
-}
-
-.banner-dots {
-  border: 1px red solid;
-}
-
-.gage-wrap {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 335px;
-  width: 100vw;
-}
-
-.gage-bar {
-  display: flex;
-  left: 0;
-  z-index: 5;
-  height: 4px;
-  width: calc(100vw - 40px);
-  background-color: #ffffff;
-  opacity: 0.3;
-}
-.inner {
-  position: absolute;
-  top: 0;
-  left: 20px;
-  height: 4px;
-  background-color: #ffffff;
-}

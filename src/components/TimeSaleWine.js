@@ -13,10 +13,10 @@ const Container = Styled.li`
 const ThumbnailContainer = Styled.div`
   background: #f7f7f7;
   width: 110px;
+  border-radius: 6px;
   `;
 
 const Thumbnail = Styled.img`
-  borderRadius: ;6px;
   width: 100%;
   height: 100%;
   margin-right: 15px;

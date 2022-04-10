@@ -16,8 +16,9 @@ const TitleWrap = Styled.div`
 `;
 
 const SubtitleWrap = Styled.div`
+  color: ${({ type }) => (type === 'popular' ? '#888888' : '#333333')};
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 19px;
 `;
 
@@ -28,14 +29,14 @@ const MoreLink = Styled.a`
   color: #A2A2A2;
 `;
 
-export default function Title({ title, subtitle, isMore }) {
+export default function Title({ title, subtitle, isMore, type = '' }) {
   return (
     <Container>
       <TitleWrap>
         <span>{title}</span>
         {isMore && <MoreLink>더보기</MoreLink>}
       </TitleWrap>
-      <SubtitleWrap>{subtitle}</SubtitleWrap>
+      <SubtitleWrap type={type}>{subtitle}</SubtitleWrap>
     </Container>
   );
 }

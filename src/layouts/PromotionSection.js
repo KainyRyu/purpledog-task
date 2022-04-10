@@ -21,13 +21,13 @@ const TextContainer = Styled.div`
   color: #FFFFFF;
   font-size: 18px;
   font-weight: bold;
-  line-heihgt: 26px;
+  line-height: 26px;
 `;
 
 const PeriodText = Styled.div`
   font-size: 13px;
-  font-weight: 400;
-  line-heihgt: 19px;
+  font-weight: 500;
+  line-height: 19px;
   opacity: 0.5;
 `;
 

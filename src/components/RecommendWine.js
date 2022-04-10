@@ -5,17 +5,16 @@ import ItemDetailContainer from './ItemDetailContainer';
 const Container = Styled.li`
   width: 140px;
   margin-right: 10px;
-  margin-bottom: 15px;
   display:  block;
 `;
 
 const ThumbnailContainer = Styled.div`
   background: #f7f7f7;
   margin-bottom: 8px;
+  border-radius: 6px;
 `;
 const Thumbnail = Styled.img`
   transform: scale(0.8);
-  borderRadius: 6px;
   height: 169px;
   width: 140px;
   background: #f7f7f7`;
