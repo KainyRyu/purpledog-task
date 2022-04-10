@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import Styled from 'styled-components';
 import { getText, TEXT_KEY } from './lib/apis';
-import Gnb from './layouts/Gnb';
+import TopSection from './layouts/TopSection';
 import MainBanner from './layouts/MainBanner';
 import WineListGroup from 'layouts/WineListGroup';
 import CountrySelectSection from 'layouts/CountrySelectSection';
 import PromotionSection from 'layouts/PromotionSection';
 import MidBanner from 'components/MidBanner';
+import Gnb from 'layouts/Gnb';
 
 const Container = Styled.div`
   overflow-x:hidden;
@@ -34,7 +35,7 @@ function MainPage() {
 
   return (
     <Container className="App">
-      <Gnb />
+      <TopSection />
       <MainBanner />
       {textGroup && (
         <BodyContainer>
@@ -67,6 +68,7 @@ function MainPage() {
           />
         </BodyContainer>
       )}
+      <Gnb />
     </Container>
   );
 }
