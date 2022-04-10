@@ -13,7 +13,6 @@ const Container = Styled.div`
 `;
 
 const BodyContainer = Styled.div`
-  border: solid 1px red;
   border-radius: 15px 15px 0px 0px;
   background-color: #fff;
   margin-top: 268px;
