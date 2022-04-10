@@ -1,26 +1,12 @@
 import React from 'react';
 import Styled from 'styled-components';
-import france from 'assets/countries/france.png';
-import italy from 'assets/countries/italy.png';
-import usa from 'assets/countries/usa.png';
-import portugal from 'assets/countries/portugal.png';
-import aus from 'assets/countries/aus.png';
-import spain from 'assets/countries/spain.png';
+import france from '../assets/countries/france.png';
+import italy from '../assets/countries/italy.png';
+import usa from '../assets/countries/usa.png';
+import portugal from '../assets/countries/portugal.png';
+import aus from '../assets/countries/aus.png';
+import spain from '../assets/countries/spain.png';
 import Title from './Title';
-
-// france:{kor:'',
-// img:france
-// }, italy:{kor:'',
-// img:italy
-// }, usa:{kor:'',
-// img:usa
-// }, portugal:{kor:'',
-// img:portugal
-// }, aus:{kor:'',
-// img:aus
-// }, spain:{kor:'',
-// img:spain
-// }
 
 const COUNTRY_COLLECTION = ['france', 'italy', 'usa', 'portugal', 'aus', 'spain'];
 const COUNTRY_COLLECTION_KOR = {

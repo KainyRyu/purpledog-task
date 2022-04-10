@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import Styled from 'styled-components';
 import { getText, TEXT_KEY } from './lib/apis';
-import MainBanner from './layouts/MainBanner';
 import Gnb from './layouts/Gnb';
+import MainBanner from './layouts/MainBanner';
 import WineListGroup from 'layouts/WineListGroup';
-import MidBanner from 'components/MidBanner';
 import CountrySelectSection from 'layouts/CountrySelectSection';
 import PromotionSection from 'layouts/PromotionSection';
+import MidBanner from 'components/MidBanner';
 
 const Container = Styled.div`
   overflow-x:hidden;

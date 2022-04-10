@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Styled from 'styled-components';
-import { getMainBanner } from '../lib/apis';
+import { BANNER_CODE, getMainBanner } from '../lib/apis';
 
 const Container = Styled.div`
     // position: relative;
@@ -13,7 +13,6 @@ const MainImg = Styled.img`
     width: 100%;
     height: auto;
     z-index: -1;
-
 `;
 
 const GageBar = Styled.div`
@@ -30,7 +29,7 @@ export default function MainBanner() {
   const [res, setRes] = useState([]);
   useEffect(() => {
     const fetch = async () => {
-      const res = await getMainBanner('MAIN_TOP');
+      const res = await getMainBanner(BANNER_CODE.mainTop);
       setRes(res.data.results);
     };
     fetch();

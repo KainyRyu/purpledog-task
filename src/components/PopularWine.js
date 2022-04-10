@@ -21,12 +21,9 @@ const Thumbnail = Styled.img`
 export default function PopularWine({ product }) {
   const {
     name,
-    salesePrice,
     wineTypeName,
     thumbnailImageUrl,
-    type,
     countryName,
-    styleNames,
     discountPercent,
     discountPrice,
     salesPrice,
