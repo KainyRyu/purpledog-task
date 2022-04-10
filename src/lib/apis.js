@@ -1,5 +1,9 @@
 const { default: axios } = require('axios');
 
+export const MAIN_CODE = {
+  main: 'MAIN',
+};
+
 export const BANNER_CODE = {
   mainTop: 'MAIN_TOP', // 메인 슬라이드 배너
   sub1: 'MAIN_SUB_1', // 타임특가 배너

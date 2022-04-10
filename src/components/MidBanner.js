@@ -1,4 +1,4 @@
-import { getMainBanner } from 'lib/apis';
+import { BANNER_CODE, getMainBanner } from 'lib/apis';
 import React, { useEffect, useState } from 'react';
 import Styled from 'styled-components';
 
@@ -16,14 +16,14 @@ const TextContainer = Styled.div`
   line-height: 24px;
   font-weight: 500;
   color: #ffffff;
-  top: 16px;;
   left: 20px;
+  bottom: calc(50% - 24px);
 `;
 
 export default function MidBanner() {
   const [bannerImg, setBannerImg] = useState();
   useEffect(() => {
-    getMainBanner('MAIN_SUB_2').then(({ data }) => setBannerImg(data.results[0]));
+    getMainBanner(BANNER_CODE.sub2).then(({ data }) => setBannerImg(data.results[0]));
   }, []);
 
   return (

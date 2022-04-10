@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Styled from 'styled-components';
-import { BANNER_CODE, getMainBanner } from 'lib/apis';
 import PromotionBanner from 'assets/banners/promotion.png';
 import Title from './Title';
 
@@ -32,9 +31,6 @@ const PeriodText = Styled.div`
 `;
 
 export default function PromotionSection({ title, subtitle }) {
-  useEffect(() => {
-    getMainBanner(BANNER_CODE.sub2);
-  }, []);
   return (
     <Container>
       <Title title={title} subtitle={subtitle} isMore />

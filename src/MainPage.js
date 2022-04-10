@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Styled from 'styled-components';
-import { getText, TEXT_KEY } from './lib/apis';
+import { getText, MAIN_CODE, TEXT_KEY } from './lib/apis';
 import TopSection from './layouts/TopSection';
 import MainBanner from './layouts/MainBanner';
 import WineListGroup from 'layouts/WineListGroup';
@@ -18,7 +18,7 @@ const BodyContainer = Styled.div`
   background-color: #fff;
   margin-top: calc(100vw - 120px);
   padding: 2px 15px 80px 15px;
-  width: calc(100% - 30px);
+  width: 100vw;
   height: 100%;
 `;
 
@@ -26,7 +26,7 @@ function MainPage() {
   const [textGroup, setTextGroup] = useState({});
   useEffect(() => {
     const fetch = async () => {
-      const res = await getText('MAIN');
+      const res = await getText(MAIN_CODE.main);
       setTextGroup(res.data.results);
     };
 

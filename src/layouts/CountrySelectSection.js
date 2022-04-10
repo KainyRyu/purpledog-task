@@ -24,7 +24,6 @@ const Container = Styled.div`
   justify-content: space-between;
 `;
 const ButtonContainer = Styled.a`
-  // width: calc(50% - 6px);
   width: calc(50vw - 20.5px);
   margin-bottom: 10px;
   position: relative;
@@ -38,8 +37,7 @@ const CountryText = Styled.div`
   color: #ffffff;
   text-shadow: 1px 1px 0 #00000026;
   position: absolute;
-  top: 20px;
-  bottom: 20px;
+  bottom: calc(50% - 7px);
   left: 20px;
   font-size: 14px;
   font-weight: 500;

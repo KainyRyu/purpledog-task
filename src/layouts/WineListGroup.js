@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import Styled from 'styled-components';
+import { BANNER_CODE, getMainBanner, getPopular, getRecommend, getTimeSale } from 'lib/apis';
 import Title from './Title';
 import RecommendWine from 'components/RecommendWine';
 import TimeSaleWine from 'components/TimeSaleWine';
 import PopularWine from '../components/PopularWine';
-import { BANNER_CODE, getMainBanner, getPopular, getRecommend, getTimeSale } from 'lib/apis';
+import timeBanner from 'assets/banners/event@3x.png';
 
 const ListContainer = Styled.ul`
   margin: 0 0 ${({ type }) => (type === 'timeSale' ? '19px' : 0)} 0;
@@ -15,12 +16,38 @@ const ListContainer = Styled.ul`
     type === 'popular' ? 'flex-wrap: wrap; justify-content: space-between;' : 'flex-wrap: none;'};
   list-style: none;
   padding: 0;
-  overflow: scroll;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
-const BannerImg = Styled.img`
+const TimeSaleContainer = Styled.div`
+  position: relative;
   width: 100%;
   margin-bottom: 15px;
+  box-sizing: border-box;
+`;
+
+const TimeSaleBannerImg = Styled.img`
+  width: 100%;
+`;
+
+const TimeSaleText = Styled.div`
+  position: absolute;
+  left: 20px;
+  bottom: calc(50% - 24px);
+  width: 100%;
+  display: flex;
+  align-contents: center;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #ffffff;
 `;
 export default function WineListGroup({
   type,
@@ -53,7 +80,15 @@ export default function WineListGroup({
     <div>
       <Title title={title} subtitle={subtitle} type={type} />
       {timeSaleBanner && (
-        <BannerImg src={timeSaleBanner.thumbnailImageUrl} alt={timeSaleBanner.description} />
+        <TimeSaleContainer>
+          {/* 해당 배너 이미지가 아니어서 xd에서 이미지 다운 받음. */}
+          <TimeSaleBannerImg src={timeBanner} alt={timeSaleBanner.description} />
+          <TimeSaleText>
+            타임특가로 퍼플독
+            <br />
+            추천와인을 즐겨보세요!
+          </TimeSaleText>
+        </TimeSaleContainer>
       )}
       <ListContainer type={type} listDirection={listDirection}>
         {wineList &&
