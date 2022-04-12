@@ -55,13 +55,14 @@ const SalesPrice = Styled.span`
 `;
 
 const TimeSaleContainer = Styled.div`
-  margin-top: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 5px;
+padding: 0 auto;
+height: 22px;
+width: 115px;
   border-radius: 2px;
-  height: 22px;
-  padding: 0 2px;
   font-size: 10px;
   font-weight: 500;
   line-height: 15px;
