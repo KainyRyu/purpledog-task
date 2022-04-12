@@ -34,6 +34,7 @@ export default function TimeSaleWine({ product }) {
     discountPercent,
     styleNames,
     timeSaleStartDate,
+    timeSaleEndDate,
   } = product;
 
   return (
@@ -50,6 +51,7 @@ export default function TimeSaleWine({ product }) {
         discountPrice={discountPrice}
         salesPrice={salesPrice}
         timeSaleStartDate={timeSaleStartDate}
+        timeSaleEndDate={timeSaleEndDate}
       />
     </Container>
   );

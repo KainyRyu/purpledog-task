@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styled from 'styled-components';
 import TimeIcon from 'assets/icons/time/time.png';
-import dayjs from 'dayjs';
+import { getTimeDiff, numberWithCommas } from 'lib/helper';
 
 const Container = Styled.div(({ type }) => ({
   marginLeft: type === 'timeSale' ? '15px' : '0',
@@ -61,8 +61,10 @@ const TimeSaleContainer = Styled.div`
   align-items: center;
   border-radius: 2px;
   height: 22px;
-  width: 86px;
+  padding: 0 2px;
   font-size: 10px;
+  font-weight: 500;
+  line-height: 15px;
   background-color: #FF0045;
   color: #FFFFFF;
 `;
@@ -82,7 +84,10 @@ export default function ItemDetailContainer({
   discountPrice,
   salesPrice,
   timeSaleStartDate,
+  timeSaleEndDate,
 }) {
+  const [count, setCount] = useState('00:00:00 남음');
+  timeSaleEndDate && getTimeDiff(timeSaleEndDate, setCount);
   return (
     <Container type={type}>
       <SubContext>
@@ -91,18 +96,20 @@ export default function ItemDetailContainer({
         <span>{styleNames}</span>
       </SubContext>
       <WineName type={type}>{name}</WineName>
-      <Price>{discountPrice ? discountPrice : salesPrice}원</Price>
+      <Price>
+        {discountPrice ? numberWithCommas(discountPrice) : numberWithCommas(salesPrice)}원
+      </Price>
       <div>
         {discountPercent && (
           <>
             <DiscountPercent>{discountPercent}%</DiscountPercent>
-            <SalesPrice>{`${salesPrice}`}원</SalesPrice>
+            <SalesPrice>{numberWithCommas(salesPrice)}원</SalesPrice>
           </>
         )}
         {type === 'timeSale' && (
           <TimeSaleContainer>
-            <TimeSaleImg src={TimeIcon} alt="time sale" />
-            {dayjs(timeSaleStartDate).format('HH:mm:ss 남음')}
+            <TimeSaleImg className="timeCount" src={TimeIcon} alt="time sale" />
+            {count}
           </TimeSaleContainer>
         )}
       </div>
