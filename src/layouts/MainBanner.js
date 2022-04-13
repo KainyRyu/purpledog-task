@@ -72,6 +72,8 @@ export default function MainBanner() {
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    swipeToSlide: true,
+    focusOnSelect: true,
     autoplay: true,
     autoplaySpeed: 2000,
     innerWidth: { innerWidth: window.innerWidth * res.length * 2 },
