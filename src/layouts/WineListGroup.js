@@ -45,7 +45,7 @@ const TimeSaleText = Styled.div`
   align-contents: center;
   box-sizing: border-box;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 24px;
   color: #ffffff;
 `;

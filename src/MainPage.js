@@ -48,7 +48,7 @@ function MainPage() {
             type="timeSale"
             listDirection="vertical"
             title={textGroup[TEXT_KEY.recommendProduct1]?.content}
-            subtitle={textGroup[TEXT_KEY.recommendProduct2Desc]?.content}
+            subtitle="와인을 정기 구독중인 회원님에게만 드려요."
           />
           <MidBanner />
 
