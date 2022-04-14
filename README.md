@@ -1,5 +1,9 @@
+
 ### A Task from Purpledog
 : Creating the main page ([xd link](https://xd.adobe.com/view/f89f16fe-1797-43ef-971d-b3b7e65d1213-adcc/specs/))
+
+### Deployed on [github-pages](https://kainyryu.github.io/purpledog-task/)
+**Mobile Friendly Web Application**
 
 ### `npm install`
 
