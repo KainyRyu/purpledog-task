@@ -28,4 +28,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 #### MAIN_SUB_1, MAIN_SUB_2 `thumbnailImageUrl` values are the same url.
 
-I have replaced some of those values to the most similar value.
+I have replaced some of those values to the most similar values.
